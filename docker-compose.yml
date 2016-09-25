@@ -14,8 +14,6 @@ services:
     container_name: "portainer-templates"
     networks:
       - local
-    volumes:
-      - ./templates:/usr/share/nginx/html
 
   portainer:
     image: portainer/portainer
