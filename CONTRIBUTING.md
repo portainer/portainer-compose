@@ -24,10 +24,9 @@ Each commit message should include a **type**, a **scope** and a **subject**:
 Lines should not exceed 100 characters. This allows the message to be easier to read on github as well as in various git tools and produces a nice, neat commit log ie:
 
 ```
- #271 feat(standard): add style config and refactor to match
- #270 fix(config): only override publicPath when served by webpack
- #269 feat(eslint-config-defaults): replace eslint-config-airbnb
- #268 feat(config): allow user to configure webpack stats output
+ #271 feat(superservice): add the service superservice
+ #270 fix(nginx): fix an issue with nginx configuration
+ #269 fix(network): add a missing option for the local network
 ```
 
 #### Type
@@ -47,7 +46,7 @@ Must be one of the following:
 #### Scope
 
 The scope could be anything specifying place of the commit change. For example `networks`,
-`services`, `images` etc...
+`services`, `nginx` etc...
 
 #### Subject
 
