@@ -2,6 +2,8 @@
 
 A simple setup to deploy Portainer with custom templates and HTTP authentication.
 
+This setup also comes with [watchtower](https://hub.docker.com/r/centurylink/watchtower/) to automatically upgrade Portainer version :)
+
 Default credentials are: `demo`/`demo`.
 
 # Requirements
