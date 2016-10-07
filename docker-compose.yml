@@ -18,11 +18,12 @@ services:
   portainer:
     image: portainer/portainer
     container_name: "portainer-app"
-    command: --templates http://templates/templates.json
+    command: --templates http://templates/templates.json -d /data
     networks:
       - local
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/portainer/data:/data
 
   watchtower:
     image: centurylink/watchtower

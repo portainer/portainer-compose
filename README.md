@@ -36,7 +36,7 @@ Update the `command` field of the **portainer** service in the `docker-compose.y
 portainer:
   image: portainer/portainer
   container_name: "portainer-app"
-  command: --templates http://templates/templates.json -H tcp://<DOCKER_HOST>:<DOCKER_PORT>
+  command: --templates http://templates/templates.json -d /data -H tcp://<DOCKER_HOST>:<DOCKER_PORT>
   networks:
     - local
 ```
