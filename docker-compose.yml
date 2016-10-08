@@ -10,7 +10,7 @@ services:
       - local
 
   templates:
-    image: portainer/templates:cloudinovasi
+    image: portainer/templates
     container_name: "portainer-templates"
     networks:
       - local
