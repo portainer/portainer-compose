@@ -66,7 +66,7 @@ Then, bind mount the file for the **templates** service in the `docker-compose.y
 
 ```yml
 templates:
-  image: portainer/templates:cloudinovasi
+  image: portainer/templates
   container_name: "portainer-templates"
   networks:
     - local
