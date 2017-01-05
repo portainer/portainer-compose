@@ -16,7 +16,7 @@ services:
       - local
 
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer:1.10.2
     container_name: "portainer-app"
     command: --templates http://templates/templates.json -d /data
     networks:
