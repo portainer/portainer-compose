@@ -20,7 +20,7 @@ Run it:
 $ docker-compose up -d
 ```
 
-And then access Portainer by hitting [http://localhost](http://localhost) with a web browser.
+And then access Portainer by hitting [http://localhost/portainer](http://localhost/portainer) with a web browser.
 
 # Configuration
 
