@@ -2,7 +2,7 @@
 
 A simple setup to deploy Portainer with custom templates.
 
-This setup also comes with [watchtower](https://hub.docker.com/r/centurylink/watchtower/) to automatically upgrade Portainer version :)
+This setup also comes with [watchtower](https://hub.docker.com/r/v2tec/watchtower/) to automatically upgrade Portainer version :)
 
 # Requirements
 
@@ -12,7 +12,7 @@ This setup also comes with [watchtower](https://hub.docker.com/r/centurylink/wat
 
 # Usage
 
-The default configuration will connect Portainer against the local Docker host.
+The default configuration will connect Portainer against the local Docker host, using an nginx container (port 80).
 
 Run it:
 
