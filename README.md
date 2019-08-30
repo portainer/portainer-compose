@@ -26,6 +26,8 @@ docker-compose up -d
 
 And then access Portainer by hitting [http://dev.portainer](http://dev.portainer) (or your own domain if you updated it) with a web browser.
 
+**NOTE**: Your machine must be able to resolve `dev.portainer` (or your own domain if you updated it). 
+
 ## Swarm
 
 Deploy this stack on a manager node inside your Swarm cluster:
@@ -34,4 +36,4 @@ Deploy this stack on a manager node inside your Swarm cluster:
 docker stack deploy --compose-file=docker-stack.yml portainer
 ```
 
-You can then access Portainer by using the IP address of any node in your Swarm cluster over port 9000 with a web browser. 
+You can then access Portainer by using the IP address of any node in your Swarm cluster over port 9000 with a web browser.
