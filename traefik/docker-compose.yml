@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  traefik:
+    image: "traefik:2.0"
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  portainer:
+    image: portainer/portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portainer.rule=Host(`dev.portainer`)"
+      - "traefik.http.routers.portainer.entrypoints=web"
+
+volumes:
+  portainer_data:
