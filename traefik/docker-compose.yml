@@ -20,6 +20,8 @@ services:
       - portainer_data:/data
     labels:
       - "traefik.enable=true"
+      # Whatever your Traefik network is set to (Note: Uncessary if you set your default network in Traefik conf/parameters)
+      - "traefik.docker.network=traefik-net"
       - "traefik.http.routers.portainer.rule=Host(`dev.portainer`)"
       - "traefik.http.routers.portainer.entrypoints=web"
 
