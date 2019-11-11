@@ -18,12 +18,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    networks:
+    - traefik-net
     labels:
       - "traefik.enable=true"
-      # Whatever your Traefik network is set to (Note: Uncessary if you set your default network in Traefik conf/parameters)
+      # Unnecessary if you set your default network in Traefik config/parameters
       - "traefik.docker.network=traefik-net"
       - "traefik.http.routers.portainer.rule=Host(`dev.portainer`)"
       - "traefik.http.routers.portainer.entrypoints=web"
 
 volumes:
   portainer_data:
+
+networks:
+  traefik-net:
+    external: true
