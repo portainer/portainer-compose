@@ -22,6 +22,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.rule=Host(`dev.portainer`)"
       - "traefik.http.routers.portainer.entrypoints=web"
-
+      # Uncomment this label if your Traefik instance is using a specific Docker network and replace the network name 
+      # This is not necessary if you set your default network in Traefik config/parameters
+      # - "traefik.docker.network=your-traefik-network-name"
 volumes:
   portainer_data:
