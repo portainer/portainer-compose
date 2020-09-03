@@ -6,7 +6,7 @@ The default configuration will make Portainer frontend available via the `portai
 
 If you're going to use Edge agents. When you set up the endpoint from Portainer Configuration, you need to change the Portainer Server URL setting to match with the label specified for Edge. In this sample, the URL specified for the Edge service is `traefik.http.routers.frontend.rule=Host(`edge.yourdomain.com`)`.
 
-![Edge](/edge.png)
+![Edge](/traefik/edge.png)
 
 Deploy this stack on any Docker node:
 
