@@ -1,3 +1,4 @@
+
 version: "2"
 
 services:
@@ -13,12 +14,16 @@ services:
       - "./vhost.d:/etc/nginx/vhost.d:ro"
 
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer-ce:2.0.0
+    command: -H unix:///var/run/docker.sock
     restart: always
-    environment:
-      - VIRTUAL_HOST=dev.portainer
     networks:
       - proxy
+    environment:
+      - VIRTUAL_HOST=portainer.yourdomain.com
+      - VIRTUAL_PORT=9000
+    ports:
+      - 8000:8000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
