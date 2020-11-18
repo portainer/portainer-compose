@@ -3,10 +3,11 @@ version: "3.3"
 services:
   traefik:
     container_name: traefik
-    image: "traefik:v2.2.8"
+    image: "traefik:v2.3"
     command:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
+      - --entrypoints.edgeagent.address=:8000
       - --providers.docker
       - --log.level=DEBUG
       - --certificatesresolvers.leresolver.acme.httpchallenge=true
@@ -16,6 +17,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8000:8000"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./acme.json:/acme.json"
@@ -47,6 +49,12 @@ services:
       - "traefik.http.services.edge.loadbalancer.server.port=8000"
       - "traefik.http.routers.edge.service=edge"
       - "traefik.http.routers.edge.tls.certresolver=leresolver"
+
+      # Edge agent service routed by Traefik
+      - "traefik.tcp.routers.edgeagent.rule=Host(`edge.yourdomain.com`)"
+      - "traefik.tcp.routers.edgeagent.entrypoints=edgeagent"
+      - "traefik.tcp.services.edgeagent.loadbalancer.server.port=8000"
+
 
 
 volumes:
