@@ -12,6 +12,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "./vhost.d:/etc/nginx/vhost.d:ro"
+      - "./proxy.conf:/etc/nginx/conf.d/proxy.conf"
 
   portainer:
     image: portainer/portainer-ce:2.0.0
@@ -20,7 +21,7 @@ services:
     networks:
       - proxy
     environment:
-      - VIRTUAL_HOST=portainer.yourdomain.com
+      - VIRTUAL_HOST=dev.portainer
       - VIRTUAL_PORT=9000
     ports:
       - 8000:8000
