@@ -29,6 +29,8 @@ services:
       - portainer_data:/data
     networks:
       - agent_network
+    depends_on:
+      - agent
     deploy:
       mode: replicated
       replicas: 1
