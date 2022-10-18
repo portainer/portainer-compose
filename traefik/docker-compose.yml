@@ -10,7 +10,7 @@ services:
       - --providers.docker
       - --log.level=DEBUG
       - --certificatesresolvers.leresolver.acme.httpchallenge=true
-      - --certificatesresolvers.leresolver.acme.email=your-email #Set your email address here, is for the generation of SSL certificates with Let's Encrypt. 
+      - --certificatesresolvers.leresolver.acme.email=info@wanner-cloud.de #Set your email address here, is for the generation of SSL certificates with Let's Encrypt. 
       - --certificatesresolvers.leresolver.acme.storage=./acme.json
       - --certificatesresolvers.leresolver.acme.httpchallenge.entrypoint=web
     ports:
@@ -31,11 +31,11 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - portainer_data_two:/data
     labels:
       # Frontend
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`portainer.yourdomain.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`portainer.wanner.cloud`)"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.services.frontend.loadbalancer.server.port=9000"
       - "traefik.http.routers.frontend.service=frontend"
@@ -50,4 +50,4 @@ services:
 
 
 volumes:
-  portainer_data:
+  portainer_data_two:
