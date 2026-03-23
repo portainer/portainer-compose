@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository is no longer maintained and has been archived.
+
 # Portainer compose setup
 
 A simple setup to deploy Portainer using `docker-compose` or `docker stack deploy` (Swarm).
